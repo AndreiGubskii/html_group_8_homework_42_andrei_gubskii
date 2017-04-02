@@ -1,0 +1,33 @@
+$turquoise-color: #63c6ae
+
+%clearfix
+	&::after
+		content: ""
+		display: table
+		clear: both
+
+*
+	box-sizing: border-box
+
+.container
+	width: 100%
+	max-width: 1180px
+	margin: 0 auto
+	@extend %clearfix
+
+.turquoise-back
+	background-color: $turquoise-color
+	color: #fff
+
+.header
+	@extend %clearfix
+
+.pull-rigth
+	float: right
+
+.pull-left
+	float: left
+.logo
+	width: 20%
+.logo,.menu-wrap
+	display: inline-block
