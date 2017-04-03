@@ -1,0 +1,1 @@
+sass --watch sass:css --no-cache --sourcemap=none --style compact

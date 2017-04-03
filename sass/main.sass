@@ -1,33 +1,122 @@
-$turquoise-color: #63c6ae
-
 %clearfix
 	&::after
 		content: ""
 		display: table
 		clear: both
 
+$colors: ('red': #e84c3d, 'yellow': #fdbd1f, 'turquoise': #1bbc9b, 'purple': #9b58b5)
+
 *
 	box-sizing: border-box
 
+body
+	background: url(../uploads/promo.jpg) no-repeat top center, #29606b
+	color: #fff
+	font-family: 'Fjalla One', sans-serif
+
+
 .container
 	width: 100%
-	max-width: 1180px
+	max-width: 1175px
 	margin: 0 auto
-	@extend %clearfix
-
-.turquoise-back
-	background-color: $turquoise-color
-	color: #fff
 
 .header
 	@extend %clearfix
+	background: rgba(41,96,107,0.5)
+	border: 1px solid #2a6c78
+	border-radius: 5px
 
-.pull-rigth
+.push-right
 	float: right
 
-.pull-left
+.push-left
 	float: left
-.logo
-	width: 20%
-.logo,.menu-wrap
+.menu
 	display: inline-block
+
+.menu-item
+	display: inline-block
+	text-decoration: none
+	color: #fff
+	font-size: 17px
+	padding: 20px
+
+.logo
+	display: inline-block
+  
+
+.logo--title
+	margin: 0
+	padding: 20px
+	font-size: 25px 
+
+.promo
+	text-align: center
+	padding: 140px 0 0 0 
+
+.promo--title
+	font-size: 41px
+	text-transform: uppercase
+	margin: 0
+
+.promo--description
+	font-size: 31px
+	text-transform: uppercase
+	margin: 13px 0
+
+.row
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+
+.middle-section-col
+	width: 50%
+	text-transform: uppercase
+	text-align: center
+	padding: 20px 100px
+
+.col-title
+	font-size: 21px
+
+.col-description
+	font-family: 'Source Sans Pro', sans-serif
+	font-size: 16px
+
+.col-icon
+	background: #fff
+	border-radius: 50%
+	width: 100px
+	height: 100px
+	padding: 20px	
+	display: inline-block
+	overflow: hidden
+
+.people-section-col
+	width: 31.33%
+	text-align: center
+	background: #245963
+	padding: 10px
+
+.people-icon-wrap
+	position: relative
+	background: #fff
+	border-radius: 50%
+	width: 100px
+	height: 100px
+	padding: 20px	
+	display: inline-block
+	overflow: hidden
+
+.people-icon
+	position: absolute
+	top: 70px
+	left: 11px
+	width: 100%
+	height: auto
+	transform: scale(2.6)
+
+@each $colorName, $colorHex in $colors
+	.box-#{$colorName}
+		background: $colorHex
+	.box-border-#{$colorName}
+		border-top: 3px solid $colorHex
