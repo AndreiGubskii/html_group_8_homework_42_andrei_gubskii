@@ -1,3 +1,5 @@
+@import mixins
+
 %clearfix
 	&::after
 		content: ""
@@ -14,6 +16,15 @@ body
 	color: #fff
 	font-family: 'Fjalla One', sans-serif
 
+.menu-btn
+	display: block
+	background: url("../images/hamburger.svg") 0 0 no-repeat
+	background-size: cover
+	width: 30px
+	height: 30px
+	margin: 20px 15px 0 0
+	+tablet
+		display: none
 
 .container
 	width: 100%
@@ -22,6 +33,7 @@ body
 
 .header
 	@extend %clearfix
+	position: relative
 	background: rgba(41,96,107,0.5)
 	border: 1px solid #2a6c78
 	border-radius: 5px
@@ -32,51 +44,77 @@ body
 .push-left
 	float: left
 .menu
-	display: inline-block
+	display: none
+	position: absolute
+	bottom: -165px
+	right: -1px
+	background: rgba(41,96,107,0.5)
+	+tablet
+		position: static
+		background: none
+		display: inline-block
+		
 
 .menu-item
-	display: inline-block
+	display: block
 	text-decoration: none
 	color: #fff
 	font-size: 17px
-	padding: 20px
+	padding: 10px 70px 10px 10px
+	+tablet
+		display: inline-block
+		padding: 27px 20px
+
 
 .logo
-	display: inline-block
-  
+	display: inline-block  
 
-.logo--title
+.logo-title
 	margin: 0
 	padding: 20px
 	font-size: 25px 
-
+.logo-link
+	text-decoration: none
+	color: inherit
 .promo
 	text-align: center
 	padding: 140px 0 0 0 
 
-.promo--title
+.promo-title
 	font-size: 41px
 	text-transform: uppercase
 	margin: 0
 
-.promo--description
+.promo-description
 	font-size: 31px
 	text-transform: uppercase
 	margin: 13px 0
-
+.promo-read-more
+	position: relative
+	display: inline-block
+	margin: 0 auto
+	cursor: pointer
+	+btn-submit(transparent,#fff)
+	+triangle(#fff,-10px,50%)
 .row
 	display: flex
 	flex-wrap: wrap
 	justify-content: space-between
 
+.middle-section
+	margin: 140px 0
 .middle-section-col
-	width: 50%
+	width: 100%
 	text-transform: uppercase
 	text-align: center
-	padding: 20px 100px
+	padding: 60px 20px 35px 20px
+	+desctop
+		width: 50%
+		padding: 60px 100px 35px 100px
 
 .col-title
-	font-size: 21px
+	font-size: 29px
+	text-transform: uppercase
 
 .col-description
 	font-family: 'Source Sans Pro', sans-serif
@@ -91,21 +129,26 @@ body
 	display: inline-block
 	overflow: hidden
 
+.people 
+	text-align: center
 .people-section-col
-	width: 31.33%
+	width: 100%
 	text-align: center
 	background: #245963
-	padding: 10px
+	padding: 60px 10px 60px 10px
+	+desctop
+		width: 31.33%
 
 .people-icon-wrap
 	position: relative
 	background: #fff
 	border-radius: 50%
-	width: 100px
-	height: 100px
+	width: 180px
+	height: 180px
 	padding: 20px	
 	display: inline-block
 	overflow: hidden
+	margin: -15px 0 50px 0
 
 .people-icon
 	position: absolute
@@ -115,8 +158,100 @@ body
 	height: auto
 	transform: scale(2.6)
 
+.section-description
+	text-transform: uppercase
+	font-size: 21px
+
+.contact
+	text-align: center
+	width: 100%
+	max-width: 575px
+	margin: 140px auto
+	padding: 20px
+
+.contact-input
+	margin: 2% 1%	
+	background: #245963
+	border: 1px solid #387d89
+	padding: 10px
+	color: #fff
+	font-size: 16px
+
+.contact-input--textarea
+	width: 100%
+	resize: none
+
+
+.contact-input--text
+	width: 48%
+	height: 50px
+
+.btn-submit
+	cursor: pointer
+	+btn-submit(#245963,#387d89)
+
+.btn-submit-wrap
+	position: relative
+	display: inline-block
+	margin: 0 auto
+
+	+triangle(#245963,-9px,50%)
+
+.footer
+	background: #245963
+	text-align: center
+	font-family: 'Source Sans Pro', sans-serif
+	padding: 50px 20px
+	font-size: 14px
+	+desctop
+		font-size: 16px
+.info
+	position: relative
+	&::after
+		content: ' '
+		display: block
+		position: absolute
+		width: 20%		
+		border-bottom: solid 1px #387d89
+		bottom: -20px
+		left: 40%
+
+.coppyrite-link
+	text-decoration: none
+	color: inherit
+
+.email,.phone-number
+	padding: 10px
+	display: block
+	+desctop
+		display: inline
+
+.fb
+	background: url("../images/fb.svg") center center no-repeat
+.tw 
+	background: url("../images/tw.svg") center center no-repeat
+
+.icon
+	display: inline-block
+	width: 20px
+	height: 20px	
+	background-size: cover
+	margin: 0 0 -8px 0
+	+desctop
+		width: 30px
+		height: 30px
+
+.coppyrite
+	margin: 30px 0
+
+.yellow-text
+	color: map-get($colors, 'yellow')
+
 @each $colorName, $colorHex in $colors
 	.box-#{$colorName}
 		background: $colorHex
 	.box-border-#{$colorName}
 		border-top: 3px solid $colorHex
+	.btn-#{$colorName}
+		+btn($colorHex)
+		margin: 40px 0 30px 0

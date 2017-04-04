@@ -12,9 +12,9 @@
 	<div class="container">
 		<header class="header">
 			<div class="logo push-left">
-				<h1 class="logo--title">Site name</h1>
+				<h1 class="logo-title"><a class="logo-link" href="#">Site name</a></h1>
 			</div>
-			<div class="menu--btn"></div>
+			<div class="menu-btn push-right" id="btn_menu"></div>
 			<nav class="menu push-right">
 				<a class="menu-item" href="#">Home</a>
 				<a class="menu-item" href="#">About</a>
@@ -23,13 +23,13 @@
 			</nav>
 		</header>
 		<section class="promo">
-			<h2 class="promo--title">
+			<h2 class="promo-title">
 				Cras Ornare Trist Lorem Ipsum
 			</h2>
-			<p class="promo--description">
+			<p class="promo-description">
 				Cusce Pellentesque sucs
 			</p>
-			<a href="#" class="promo--read-more">Read more</a>
+			<a href="#" class="promo-read-more">Read more</a>
 		</section>
 		<section class="middle-section">
 			<div class="row">
@@ -82,6 +82,8 @@
 			</div>
 		</section>
 		<section class="people">
+			<h2 class="col-title">tempor interdum</h2>
+			<p class="section-description">Integer vitae libero ac risus egestas placerat</p>
 			<div class="row">
 				<div class="people-section-col box-border-red">
 					<div class="people-icon-wrap">
@@ -92,6 +94,7 @@
 						tortor neque egestas augue, eu vulputate magna eros eu erat.
 						Aliquam erat volutpat
 					</p>
+					<a href="#" class="btn-red">Read more</a>
 				</div>
 				<div class="people-section-col box-border-yellow">
 					<div class="people-icon-wrap">
@@ -101,20 +104,54 @@
 						Lorem dapibus, neque id cursus faucibus, 
 						tortor neque egestas augue, eu vulputate magna eros eu erat.
 						Aliquam erat volutpat
-					</p>
+					</p>					
+					<a href="#" class="btn-yellow">Read more</a>
 				</div>
 				<div class="people-section-col box-border-turquoise">
-				<div class="people-icon-wrap">
+					<div class="people-icon-wrap">
 						<img class="people-icon" src="uploads/ava_3.jpg" alt="person-3" width="480" height="640">
 					</div>					
 					<p class="col-description">
 						Lorem dapibus, neque id cursus faucibus, 
 						tortor neque egestas augue, eu vulputate magna eros eu erat.
 						Aliquam erat volutpat
-					</p>
+					</p>					
+					<a href="#" class="btn-turquoise">Read more</a>
 				</div>
 			</div>
 		</section>
+		<section class="contact">
+			<div class="col-icon">
+				<img src="images/ico-email.png" alt="icon-email" width="60" height="60">
+			</div>
+			<h2 class="col-title">connnect with us</h2>
+			<p class="section-description">Vivamus vestibulum nulla nec ante</p>
+			<form>
+				<div class="row">
+					<input class="contact-input contact-input--text" type="text">
+					<input class="contact-input contact-input--text" type="text">
+					<textarea class="contact-input contact-input--textarea" cols="30" rows="10"></textarea>
+					<div class="btn-submit-wrap">
+						<input class="btn-submit" type="submit" value="Submit">
+					</div>
+				</div>
+			</form>
+		</section>		
 	</div>
+	<footer class="footer">
+		<div class="container">
+			<div class="info">
+				<span class="email">info@sitename.com</span>
+				<a href="#" class="icon fb"></a>
+				<a href="#" class="icon tw"></a>
+				<span class="phone-number">(000) 777 777 7777</span>
+			</div>
+			<div class="coppyrite">
+				<span>Copyright(c) website name. <span class="yellow-text">Designed by: <a class="coppyrite-link" href="#">www.alltemplateneeds.com</a></span> / Images from: <a class="coppyrite-link" href="#">www.wallpaperswide.com</a>, <a class="coppyrite-link" href="#">www.photorack.net</a></span>
+			</div>
+		</div>
+	</footer>
+	<script src="vendor/jq/jquery-3.1.1.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
